@@ -11,6 +11,7 @@
 /vendor/
 
 # ignore default modules from composer
+/assets/
 /asset-admin/
 /campaign-admin/
 /cms/
