@@ -3,6 +3,7 @@
 namespace SettlementsSite;
 
 use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\TextareaField;
@@ -17,6 +18,8 @@ class AgreementSite extends DataObject {
     
     private static $db = [
         'Title' => 'Varchar',
+        'Lat' => 'Decimal',
+        'Long' => 'Decimal',
         'Address' => 'Text',
         'Status' => 'Text',
         'CulturalSig' => 'HTMLText'
@@ -29,7 +32,11 @@ class AgreementSite extends DataObject {
     public function getCMSFields() {
         
         $fields = FieldList::create(
+            HeaderField::create('Header','Map config'),
             TextField::create('Title'),
+            TextField::create('Lat'),
+            TextField::create('Long'),
+            HeaderField::create('Header','Content'),
             TextareaField::create('Address'),
             TextareaField::create('Status'),
             HtmlEditorField::create('CulturalSig')

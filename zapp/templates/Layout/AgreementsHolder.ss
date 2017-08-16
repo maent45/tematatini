@@ -8,6 +8,8 @@
 		<div id="map" style="width:100%;height:400px"></div>
 </div>
 
-<% if $getKey %>
-dsf
+<% if $AgreementSites %>
+    <% loop $AgreementSites %>
+        <p>$Title</p>
+    <% end_loop %>
 <% end_if %>

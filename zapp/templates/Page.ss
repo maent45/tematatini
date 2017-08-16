@@ -31,7 +31,7 @@
 <% include Footer %>
 
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6HgT0DHPqWkjv7MUh47YgE8n59Hlp_jM&callback=myMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6HgT0DHPqWkjv7MUh47YgE8n59Hlp_jM&callback=initMap">
 </script>
 
 <% require javascript('//code.jquery.com/jquery-1.7.2.min.js') %>
