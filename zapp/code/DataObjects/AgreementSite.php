@@ -13,8 +13,6 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
-use SettlementsSite\AgreementsHolder;
-
 class AgreementSite extends DataObject {
     
     private static $db = [
@@ -25,7 +23,7 @@ class AgreementSite extends DataObject {
     ];
     
     private static $has_one = [
-        'AgreementsHolder' => AgreementsHolder::class
+        'AgreementsHolder' => 'AgreementsHolder'
     ];
     
     public function getCMSFields() {

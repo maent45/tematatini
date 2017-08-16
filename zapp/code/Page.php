@@ -9,4 +9,9 @@ class Page extends SiteTree
 
     private static $has_one = array(
     );
+    
+    public function getKey() {
+        return AgreementsHolder::get()->GMapsApiKey;
+    }
+    
 }

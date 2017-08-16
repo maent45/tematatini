@@ -35,7 +35,7 @@
 </script>
 
 <% require javascript('//code.jquery.com/jquery-1.7.2.min.js') %>
-<% require javascript('themes/simple/javascript/maps.js') %>
+<% require javascript('zapp/javascript/maps.js') %>
 <% require themedJavascript('script') %>
 
 </body>
