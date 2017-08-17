@@ -1,1 +1,3 @@
 <% include SideBar %>
+$Form
+$Content

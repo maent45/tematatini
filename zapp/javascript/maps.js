@@ -4,11 +4,11 @@ function initMap() {
          ['Title A', 3.180967,101.715546],
          ['Title B', 3.200848,101.616669],
          ['Title C', 3.147372,101.597443],
-         ['Title D', 3.19125,101.710052]
+         ['Title C', 3.171368,101.653404]
     ];
     
-    console.log(locations);
-    
+    console.log("original locations", locations);
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: new google.maps.LatLng(3.171368,101.653404),

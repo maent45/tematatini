@@ -9,7 +9,13 @@
 </div>
 
 <% if $AgreementSites %>
-    <% loop $AgreementSites %>
-        <p>$Title</p>
-    <% end_loop %>
+    <div class="map-locations">
+        <% loop $AgreementSites %>
+            <div class="map-locations-child">
+                <span>$Title</span>
+                <span>$Lat</span>
+                <span>$Long</span>    
+            </div>
+        <% end_loop %>    
+    </div>
 <% end_if %>
