@@ -12,9 +12,9 @@
     <div class="map-locations">
         <% loop $AgreementSites %>
             <div class="map-locations-child">
-                <span>$Title</span>
-                <span>$Lat</span>
-                <span>$Long</span>    
+                <span class="title">$Title</span>
+                <span class="lat">$Lat</span>
+                <span class="long">$Long</span>    
             </div>
         <% end_loop %>    
     </div>

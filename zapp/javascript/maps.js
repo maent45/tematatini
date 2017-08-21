@@ -1,13 +1,22 @@
+var mapLocations = [];
+
+function loadMapLocations() {
+    
+    $(".map-locations-child").each(function() {
+        var title = $(this).find('.title').text();
+        var lat = parseFloat($(this).find('.lat').text());
+        var long = parseFloat($(this).find('.long').text());
+        
+        mapLocations.push([title, lat, long]);
+    });
+    
+    console.log('mapLocation',mapLocations);
+    
+}
+
+loadMapLocations();
+
 function initMap() {
-    
-    var locations = [
-         ['Title A', 3.180967,101.715546],
-         ['Title B', 3.200848,101.616669],
-         ['Title C', 3.147372,101.597443],
-         ['Title C', 3.171368,101.653404]
-    ];
-    
-    console.log("original locations", locations);
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
@@ -18,9 +27,9 @@ function initMap() {
     var marker;
     var i;
     
-    for (i = 0; i < locations.length; i++) {  
+    for (i = 0; i < mapLocations.length; i++) {  
         marker = new google.maps.Marker({
-             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+             position: new google.maps.LatLng(mapLocations[i][1], mapLocations[i][2]),
              map: map
         });
     
