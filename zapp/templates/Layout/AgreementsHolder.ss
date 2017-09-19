@@ -26,6 +26,7 @@
                     <span class="address">$Address</span>
                     <span class="status">$Status</span>
                     <div class="cultural-sig">$CulturalSig</div>
+                    <span class="vid-url">$VidURL</span>
                 </div>
             <% end_loop %>    
         </div>

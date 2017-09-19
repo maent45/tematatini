@@ -4,12 +4,20 @@ function loadMapLocations() {
     
     $(".map-locations-child").each(function() {
         var title = $(this).find('.title').text();
+        var vid_url = $(this).find('.vid-url').text();
         var lat = parseFloat($(this).find('.lat').text());
         var long = parseFloat($(this).find('.long').text());
         var address = $(this).find('.address').text();
         var cultural_sig = $(this).find('.cultural-sig').text();
         
-        mapLocations.push([title, lat, long, address, cultural_sig]);
+        mapLocations.push([
+            title, 
+            vid_url, 
+            lat, 
+            long, 
+            address, 
+            cultural_sig
+        ]);
     });
     
     console.log('mapLocation',mapLocations);
@@ -36,15 +44,14 @@ function initMap() {
     for (i = 0; i < mapLocations.length; i++) {
         
         marker = new google.maps.Marker({
-             position: new google.maps.LatLng(mapLocations[i][1], mapLocations[i][2]),
-             map: map,
-             title: 'Title'
+             position: new google.maps.LatLng(mapLocations[i][2], mapLocations[i][3]),
+             map: map
         });
         
         // show marker title on click
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent('<div><h2>'+mapLocations[i][0]+'</h2><b>'+mapLocations[i][3]+'</b><p>'+mapLocations[i][4]+'</p></div>');
+                infowindow.setContent('<div><h2>'+mapLocations[i][0]+'</h2><b>'+mapLocations[i][4]+'</b><p>'+mapLocations[i][5]+'</p></div>');
                 infowindow.open(map, marker);
             }
         })(marker, i));

@@ -22,7 +22,8 @@ class AgreementSite extends DataObject {
         'Long' => 'Decimal',
         'Address' => 'Text',
         'Status' => 'Text',
-        'CulturalSig' => 'HTMLText'
+        'CulturalSig' => 'HTMLText',
+        'VidURL' => 'Text'
     ];
     
     private static $has_one = [
@@ -34,6 +35,7 @@ class AgreementSite extends DataObject {
         $fields = FieldList::create(
             HeaderField::create('Header','Map config'),
             TextField::create('Title'),
+            TextField::create('VidURL', 'Video URL'),
             TextField::create('Lat'),
             TextField::create('Long'),
             HeaderField::create('Header','Content'),
