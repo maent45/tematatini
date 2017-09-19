@@ -51,7 +51,8 @@ function initMap() {
         // show marker title on click
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent('<div><h2>'+mapLocations[i][0]+'</h2><b>'+mapLocations[i][4]+'</b><p>'+mapLocations[i][5]+'</p></div>');
+                // TODO: refactor infowindow setContent
+                infowindow.setContent('<div><h2>'+mapLocations[i][0]+'</h2><b>'+mapLocations[i][4]+'</b><div><iframe width="420" height="345" src="'+mapLocations[i][1]+'"></iframe></div><p>'+mapLocations[i][5]+'</p></div>');
                 infowindow.open(map, marker);
             }
         })(marker, i));
