@@ -22,6 +22,7 @@
 	<link rel="shortcut icon" href="themes/simple/images/favicon.ico" />
 </head>
 <body class="$ClassName<% if not $Menu(2) %> no-sidebar<% end_if %>" <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
+
 <% include Header %>
 <div class="main" role="main">
 	<div class="inner typography line">

@@ -2,6 +2,7 @@
 
 use Page;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 
@@ -10,7 +11,9 @@ use SettlementsSite\AgreementSite;
 class AgreementsHolder extends Page {
     
     private static $db = [
-        'GMapsApiKey' => 'Text'
+        'GMapsApiKey' => 'Text',
+        'CenterLat' => 'Varchar',
+        'CenterLong' => 'Varchar'
     ];
     
     private static $has_many = [
@@ -21,12 +24,17 @@ class AgreementsHolder extends Page {
         
         $fields = parent::getCMSFields();
         
-        $fields->addFieldToTab('Root.AgreementSites', TextField::create('GMapsApiKey', 'API Key'));
-        $fields->addFieldToTab('Root.AgreementSites', GridField::create(
-            'AgreementSites',
-            'AgreementSites',
-            $this->AgreementSites(),
-            GridFieldConfig_RecordEditor::create()
+        $fields->addFieldsToTab('Root.AgreementSite', array(
+            TextField::create('GMapsApiKey', 'API Key'),
+            HeaderField::create('Header','Default map center starting position'),
+            TextField::create('CenterLat', 'Latitude'),
+            TextField::create('CenterLong', 'Longitude'),
+            GridField::create(
+                'AgreementSites',
+                'Agreement Sites',
+                $this->AgreementSites(),
+                GridFieldConfig_RecordEditor::create()
+            )
         ));
         
         return $fields;

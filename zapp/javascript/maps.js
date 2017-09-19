@@ -18,11 +18,14 @@ function loadMapLocations() {
 
 loadMapLocations();
 
-function initMap() {
+var defCenterLat = $(".map-def-center-coords__lat").text();
+var defCenterLong = $(".map-def-center-coords__long").text();
 
+function initMap() {
+    
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
-        center: new google.maps.LatLng(-41.13,174.84),
+        center: new google.maps.LatLng(defCenterLat,defCenterLong),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     
